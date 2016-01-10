@@ -1,0 +1,3 @@
+#!/bin/sh
+
+$JAVA_HOME/bin/java -cp jlivepatcher.jar jp.dip.ysfactory.jlivepatcher.AttacherMain $@

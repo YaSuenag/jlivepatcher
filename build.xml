@@ -3,17 +3,17 @@
 <project name="jlivepatcher" default="all">
 
   <target name="compile">
-    <javac srcdir="src" destdir="build" source="1.6" target="1.6"/>
+    <javac srcdir="src" destdir="build" source="6" target="6" debug="on"/>
   </target>
 
   <target name="clean">
     <delete dir="build/jp" includeEmptyDirs="true"/>
-    <delete file="jlivepatcher.jar"/>
+    <delete file="dist/jlivepatcher.jar"/>
   </target>
 
   <target name="jar" depends="compile">
-    <jar destfile="jlivepatcher.jar">
-        <zipfileset dir="build" />
+    <jar destfile="dist/jlivepatcher.jar">
+        <zipfileset dir="build" excludes=".gitkeep"/>
         <manifest>
             <attribute name="Premain-Class" value="jp.dip.ysfactory.jlivepatcher.JLivePatcher" />
             <attribute name="Agent-Class" value="jp.dip.ysfactory.jlivepatcher.JLivePatcher" />
