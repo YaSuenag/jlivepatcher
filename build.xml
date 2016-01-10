@@ -15,6 +15,7 @@
     <jar destfile="dist/jlivepatcher.jar">
         <zipfileset dir="build" excludes=".gitkeep"/>
         <manifest>
+            <attribute name="Main-Class" value="jp.dip.ysfactory.jlivepatcher.AttacherMain" />
             <attribute name="Premain-Class" value="jp.dip.ysfactory.jlivepatcher.JLivePatcher" />
             <attribute name="Agent-Class" value="jp.dip.ysfactory.jlivepatcher.JLivePatcher" />
             <attribute name="Can-Retransform-Classes" value="true" />
