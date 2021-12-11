@@ -16,7 +16,7 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with ThreadDumper.  If not, see <http://www.gnu.org/licenses/>.
 */
-package jp.dip.ysfactory.jlivepatcher;
+package com.yasuenag.jlivepatcher;
 
 import java.lang.instrument.*;
 import java.io.*;
