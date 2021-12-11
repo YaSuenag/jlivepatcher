@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2014 Yasumasa Suenaga
+ * Copyright (C) 2014, 2021,Yasumasa Suenaga
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -88,11 +88,10 @@ public class JLivePatcher{
     JPatchTransformer transformer = new JPatchTransformer(classMap);
     inst.addTransformer(transformer, true);
 
-
     /* Retransform for loaded classes. */
     List<Class> targetClasses = new ArrayList<Class>();
     for(Class cls : inst.getAllLoadedClasses()){
-      String className = cls.getName().replace('/', '.');
+      String className = cls.getName().replace('.', '/');
 
       if(classMap.containsKey(className)){
         targetClasses.add(cls);
