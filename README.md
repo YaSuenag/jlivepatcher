@@ -21,9 +21,9 @@ The GNU Lesser General Public License, version 3.0
     * java起動オプションに ```-javaagent:jlivepatcher.jar=<プロパティファイル>``` を追記します。
   * 既存プロセスに対する差し替えは、以下3つのいずれかの方法で可能です。
 
-### 1. AttachAPI (http://docs.oracle.com/javase/jp/6/technotes/guides/attach/index.html)
+### 1. AttachAPI
 
-自分でプログラムを書いてアタッチします。JLivePatcher でも [AttacherMain.java](src/com/yasuenag/jlivepatcher/AttacherMain.java) で利用しています。
+自分で [Attach API](http://docs.oracle.com/javase/jp/6/technotes/guides/attach/index.html) を用いたプログラムを書いてアタッチします。JLivePatcher でも [AttacherMain.java](src/com/yasuenag/jlivepatcher/AttacherMain.java) で利用しています。
 
 ### 2. ランチャスクリプトの使用
 
@@ -33,7 +33,7 @@ The GNU Lesser General Public License, version 3.0
 $ jlivepatcher <PID> <プロパティファイル>
 ```
 
-### 3. jcmd **Java 9以降**
+### 3. jcmd ※Java 9以降
 
 `jcmd` の `JVMTI.agent_load` サブコマンドを使用します。
 
