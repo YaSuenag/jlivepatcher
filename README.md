@@ -19,11 +19,17 @@ The GNU Lesser General Public License, version 3.0
 2. Java のプロパティファイル形式で、Key にクラス名（FQCN）、Value に新しいクラスファイルを記述してください。（test ディレクトリの retransform.properties を参考にしてください。）
   * 起動時差し替えの場合
     * java起動オプションに ```-javaagent:jlivepatcher.jar=<プロパティファイル>``` を追記します。
-  * 既存プロセスに対する差し替えは、以下の2つのいずれかの方法で可能です。
+  * 既存プロセスに対する差し替えは、以下3つのいずれかの方法で可能です。
     * AttachAPI (http://docs.oracle.com/javase/jp/6/technotes/guides/attach/index.html) を用いて既存プロセスにアタッチします。
     * ```dist/jliveattacher``` を使用し、以下のように起動します。
 
 ```shell
-jlivepatcher <PID> <プロパティファイル>
+$ jlivepatcher <PID> <プロパティファイル>
+```
+
+    * ***Java 9以降*** : `jcmd` を使用します。
+
+```
+$ jcmd <PID> /path/to/jlivepatcher.jar <プロパティファイル（フルパス）>
 ```
 
