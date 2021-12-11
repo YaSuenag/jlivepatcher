@@ -3,7 +3,8 @@ JLivePatcher
 JLivePatcher は、特定クラスのみを java 起動時、または既存プロセスに対して差し替える JVMTI java エージェントです。これにより、アプリケーションだけでなくフレームワーク等のパッチ作業でバイナリ全体を入れ替える必要がなくなります。
 
 ## ライセンス ##
- GNU General Public License, version 2
+
+The GNU Lesser General Public License, version 3.0
 
 ## 動作環境 ##
  Java SE 6 以降
