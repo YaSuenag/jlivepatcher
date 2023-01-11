@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2021 Yasumasa Suenaga
+ * Copyright (C) 2021, 2023, Yasumasa Suenaga
  *
  * This file is part of JLivePatcher
  *
@@ -63,7 +63,10 @@ public class JLivePatcher{
 
         try{
           classFileStream = new FileInputStream(classFile);
-          classFileStream.read(classBytes);
+          if(classFileStream.read(classBytes) != classBytes.length){
+            throw new IOException("Cannot read all bytes from class file");
+          }
+
           String className = ((String)entry.getKey()).replace('.', '/');
           classMap.put(className, classBytes);
         }
